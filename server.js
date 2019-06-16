@@ -14,10 +14,6 @@ const db = knex({
 	connection: {
 		host: process.env.DATABASE_URL,
 		ssl: true
-		// user: 'postgres',
-		// password: 'test!TeSt%100', // must use your own postgres password
-		// // password: 'Your_Database_Password', // must use your own postgres password
-		// database: 'smartbrainapp'
 	}
 });
 
@@ -28,7 +24,6 @@ app.use(bodyParser.json());
 // basic/root route:
 app.get('/', (req, res) => {
 	res.send('this is working!');
-	// res.send(database.users);
 });
 
 // signin route: (with advanced function)
@@ -47,10 +42,3 @@ app.post('/imageurl', (req, res) => imgEntry.handleApiCall(req, res));
 app.listen(process.env.PORT || 3001, () => {
 	console.log(`app is running on port ${process.env.PORT}`);
 });
-
-// Things To-Do:
-// root route('/') --> GET --> res = this is working,
-// signin route --> POST --> res = success/fail,
-// register --> POST --> return = user,
-// profile/:userId --> GET --> ret = user,
-// image (end point) --> PUT --> res = count/entries.
