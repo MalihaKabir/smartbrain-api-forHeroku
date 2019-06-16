@@ -26,8 +26,8 @@ app.use(bodyParser.json());
 
 // basic/root route:
 app.get('/', (req, res) => {
-	// res.send('this is working!');
-	res.send(database.users);
+	res.send('this is working!');
+	// res.send(database.users);
 });
 
 // signin route: (with advanced function)
