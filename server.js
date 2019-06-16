@@ -12,7 +12,7 @@ const imgEntry = require('./controllers/imgEntry');
 const db = knex({
 	client: 'pg',
 	connection: {
-		host: '127.0.0.1',
+		host: 'postgresql-infinite-48681',
 		user: 'postgres',
 		password: 'test!TeSt%100', // must use your own postgres password
 		// password: 'Your_Database_Password', // must use your own postgres password
