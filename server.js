@@ -12,11 +12,12 @@ const imgEntry = require('./controllers/imgEntry');
 const db = knex({
 	client: 'pg',
 	connection: {
-		host: 'postgresql-infinite-48681',
-		user: 'postgres',
-		password: 'test!TeSt%100', // must use your own postgres password
-		// password: 'Your_Database_Password', // must use your own postgres password
-		database: 'smartbrainapp'
+		host: process.env.DATABASE_URL,
+		ssl: true
+		// user: 'postgres',
+		// password: 'test!TeSt%100', // must use your own postgres password
+		// // password: 'Your_Database_Password', // must use your own postgres password
+		// database: 'smartbrainapp'
 	}
 });
 
