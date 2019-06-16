@@ -14,7 +14,8 @@ const db = knex({
 	connection: {
 		host: '127.0.0.1',
 		user: 'postgres',
-		password: 'Your_Database_Password', // must use your own postgres password
+		password: 'test!TeSt%100', // must use your own postgres password
+		// password: 'Your_Database_Password', // must use your own postgres password
 		database: 'smartbrainapp'
 	}
 });
@@ -42,8 +43,8 @@ app.get('/profile/:id', (req, res) => profile.handleProfile(req, res, db));
 app.put('/image', (req, res) => imgEntry.handleImgEntries(req, res, db));
 app.post('/imageurl', (req, res) => imgEntry.handleApiCall(req, res));
 
-app.listen(3001, () => {
-	console.log('app is running on port 3001');
+app.listen(process.env.PORT || 3001, () => {
+	console.log(`app is running on port ${process.env.PORT}`);
 });
 
 // Things To-Do:
